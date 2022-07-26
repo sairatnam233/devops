@@ -1,0 +1,17 @@
+---
+ - hosts: localhost
+   become: true
+   tasks:
+     - mail:
+         host: smtp.gmail.com
+         port: 587
+         secure: try
+         from: awsdevops1436@gmail.com
+         to: srikar0610@gmail.com, sairatnam.233@gmail.com
+         subject: mail notification
+         body: test
+         headers:
+           - Reply-To=
+         username: awsdevops1436@gmail.com
+         password: wxwjugujlwembhsf
+       delegate_to: localhost
